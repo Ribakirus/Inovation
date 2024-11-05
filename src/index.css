@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-gradient-to-b from-[#0c191f] to-[#1b3b3b] min-h-screen text-gray-100 antialiased;
+  }
+}
+
+.image-compare-slider {
+  @apply absolute top-0 left-0 w-1 h-full bg-white shadow-lg cursor-col-resize;
+  transform: translateX(-50%);
+}
+
+.image-compare-handle {
+  @apply absolute left-1/2 w-8 h-8 bg-white rounded-full -translate-x-1/2 shadow-lg 
+         flex items-center justify-center border-2 border-gray-200;
+}
+
+.image-compare-handle::after {
+  content: '';
+  @apply w-4 h-0.5 bg-gray-400 rounded-full;
+}
+
+.image-compare-handle.top {
+  @apply -top-4;
+}
+
+.image-compare-handle.bottom {
+  @apply -bottom-4;
+}
